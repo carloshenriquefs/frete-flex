@@ -2,7 +2,7 @@ package tech.buildrun.freteflex.domain;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component(value = "standardShippingCalculator")
 public class StandardShippingCalculator implements ShippingCalculator {
 
     @Override
