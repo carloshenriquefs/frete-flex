@@ -10,3 +10,4 @@ public class ExpressShippingCalculator implements ShippingCalculator {
         return weight * 1.5 + distance * 0.75;
     }
 }
+

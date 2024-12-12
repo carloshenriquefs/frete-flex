@@ -10,3 +10,4 @@ public class StandardShippingCalculator implements ShippingCalculator {
         return weight * 1.0 + distance * 0.5;
     }
 }
+
