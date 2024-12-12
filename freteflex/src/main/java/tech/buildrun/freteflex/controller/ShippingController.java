@@ -2,12 +2,14 @@ package tech.buildrun.freteflex.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import tech.buildrun.freteflex.record.ShippingResponse;
 import tech.buildrun.freteflex.service.ShippingService;
 
 @RestController
+@RequestMapping
 public class ShippingController {
 
     private final ShippingService shippingService;
@@ -16,7 +18,7 @@ public class ShippingController {
         this.shippingService = shippingService;
     }
 
-    @GetMapping(value = "/shipping//calculate")
+    @GetMapping(value = "/shipping/calculate")
     public ResponseEntity<ShippingResponse> calculate(@RequestParam("type") String shippingType,
                                                       @RequestParam("distance") Double distance,
                                                       @RequestParam("weight") Double weight) {
@@ -25,5 +27,4 @@ public class ShippingController {
 
         return ResponseEntity.ok(new ShippingResponse(cost));
     }
-
 }
